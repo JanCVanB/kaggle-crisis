@@ -11,9 +11,9 @@ def read(filepath):
             predictions.append(row[1])
     return predictions
 
-rf_tf_idf = read('results/predictions_rf_tf_idf.txt')
-rf_wc = read('results/predictions_rf_wc.txt')
-ada_wc = read('predictions_adaboost.txt')
+rf_tf_idf = read('predictions/predictions_rf_tf_idf.txt')
+rf_wc = read('predictions/predictions_rf_wc.txt')
+ada_wc = read('predictions/predictions_adaboost.txt')
 
 predictors = (rf_tf_idf, rf_wc, ada_wc)
 predictions = []
@@ -24,7 +24,7 @@ for i in range(len(rf_tf_idf)):
     else:
         predictions.append(0)
 
-with open('predictions_vote.txt', 'wb') as votefile:
+with open('predictions/predictions_vote.txt', 'wb') as votefile:
     votewriter = writer(votefile)
     votewriter.writerow(['Id', 'Prediction'])
     for i, prediction in enumerate(predictions):
