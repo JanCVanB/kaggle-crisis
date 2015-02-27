@@ -5,6 +5,7 @@ Machine learning model to correlate financial report word frequencies with the 0
 Created by Jan Van Bruggen, Yamei Ou, and Obinna Eruchalu
 for the Kaggle competition at https://inclass.kaggle.com/c/cs-ee-155-kaggle-competition
 
+
 ## Kaggle Competition Instructions
 
 In this competition, you are going to predict the appearance of the financial crisis era 
@@ -22,4 +23,17 @@ These words are the top 500 most frequent word stems in the reports
 published in the U.S. Recession era with stop words filtered out. 
 Your task is to reveal the correlation of the frequency of words and the appearance of the financial crisis.
 
-![](http://artfcity.com/wp-content/uploads/2015/01/business-gif.gif)
+
+## Our Model
+
+We aggregated the out-of-sample predictions of multiple models to determine our final predictions.
+First we used the word count and tf-idf datasets to train several different classifier models, including
+Random Forest, AdaBoost, Decision Tree, Naive Bayes, and Support Vector Machine (both linear- and inifinite-kernel).
+After examining the 5-fold cross-validation error of each dataset/classifier combination,
+we decided that the best models to combine were
+Random Forest (on word count), Random Forest (on tf-idf), and AdaBoost (on word count).
+We aggregated these predictions with a simple majority vote,
+and the aggregated predictions achieved 93% accuracy on the competition's final leaderboard.
+
+
+![](http://i.imgur.com/ynqYgPw.gif)
