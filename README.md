@@ -36,4 +36,4 @@ We aggregated these predictions with a simple majority vote,
 and the aggregated predictions achieved 93% accuracy on the competition's final leaderboard.
 
 
-![](http://i.imgur.com/ynqYgPw.gifv)
+![](http://i.imgur.com/ynqYgPw.gif)
